@@ -20,7 +20,8 @@ io.on('connection', socket => {
         const { error, newUser} = addUser({
             id: socket.id,
             name: numberOfUsersInRoom===0 ? 'Player 1' : 'Player 2',
-            room: payload.room
+            room: payload.room,
+            username: payload.name 
         })
 
         if(error)
